@@ -3,18 +3,22 @@ import React, { useState } from 'react';
 function AjouterFilm({ ajouterFilm }) {
   const [titre, setTitre] = useState('');
   const [description, setDescription] = useState('');
+  const [descriptionComplete, setDescriptionComplete] = useState('');
   const [posterURL, setPosterURL] = useState('');
+  const [trailerURL, setTrailerURL] = useState('');
   const [note, setNote] = useState('');
   const [afficherFormulaire, setAfficherFormulaire] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (titre && description && posterURL && note) {
+    if (titre && description && posterURL && trailerURL && note) {
       const nouveauFilm = {
         titre: titre,
         description: description,
+        descriptionComplete: descriptionComplete || description,
         posterURL: posterURL,
+        trailerURL: trailerURL,
         note: parseFloat(note)
       };
 
@@ -22,7 +26,9 @@ function AjouterFilm({ ajouterFilm }) {
 
       setTitre('');
       setDescription('');
+      setDescriptionComplete('');
       setPosterURL('');
+      setTrailerURL('');
       setNote('');
       setAfficherFormulaire(false);
     }
@@ -56,14 +62,27 @@ function AjouterFilm({ ajouterFilm }) {
 
             <div className="mb-4">
               <label className="block text-gray-700 font-semibold mb-2">
-                Description
+                Description courte
               </label>
               <textarea
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg"
-                rows="3"
+                rows="2"
                 required
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-2">
+                Description complète
+              </label>
+              <textarea
+                value={descriptionComplete}
+                onChange={(e) => setDescriptionComplete(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                rows="4"
+                placeholder="Description détaillée pour la page du film"
               />
             </div>
 
@@ -76,6 +95,20 @@ function AjouterFilm({ ajouterFilm }) {
                 value={posterURL}
                 onChange={(e) => setPosterURL(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                required
+              />
+            </div>
+
+            <div className="mb-4">
+              <label className="block text-gray-700 font-semibold mb-2">
+                URL de la bande-annonce YouTube
+              </label>
+              <input
+                type="url"
+                value={trailerURL}
+                onChange={(e) => setTrailerURL(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg"
+                placeholder="https://www.youtube.com/embed/..."
                 required
               />
             </div>
