@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Application de Cinéma React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Cette application permet de gérer votre collection de films avec React et Tailwind CSS.
 
-## Available Scripts
+## Fonctionnalités
 
-In the project directory, you can run:
+- Affichage des films en grille
+- Filtrage par titre
+- Filtrage par note minimale
+- Ajout de nouveaux films
+
+## Commandes disponibles
+
+Dans le répertoire du projet, vous pouvez exécuter :
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Lance l'application en mode développement.
+Ouvrez [http://localhost:3000](http://localhost:3000) pour la voir dans votre navigateur.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+La page se rechargera automatiquement quand vous ferez des modifications.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Lance les tests en mode interactif.
 
 ### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Crée une version de production de l'application dans le dossier `build`.
+Cette version est optimisée pour les meilleures performances.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Structure du projet
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── App.js                      Composant principal
+├── components/
+│   ├── MovieCard.js           Carte d'affichage d'un film
+│   ├── MovieList.js           Liste des films en grille
+│   ├── Filtre.js              Composant de filtrage
+│   └── AjouterFilm.js         Formulaire d'ajout de film
+└── index.css                   Styles avec Tailwind CSS
+```
 
-### `npm run eject`
+## Technologies utilisées
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- React avec Hooks
+- Tailwind CSS pour le design
+- Create React App comme base
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Comment utiliser
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Lancer l'application avec `npm start`
+2. Utiliser les filtres pour rechercher des films
+3. Cliquer sur "Ajouter un nouveau film" pour ajouter un film
+4. Remplir le formulaire avec titre, description, URL du poster et note
